@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>랜덤</title>
+</head>
+<style>
+    body,
+    canvas {
+        margin: 0px;
+        padding: 0px
+    }
+</style>
+<script>
+    var i = 2000000;   //돌리고 싶은 횟수
+    var i_1 = 35 //나왔으면 하는 숫자
+    function start() {
+        console.log("눌림")
+            for (j = 0; j < i; j++) {
+                let random = Math.floor(Math.random() * 1000000)
+                console.log(random)
+                console.log("돌아가는중")
+                if (random === i_1) {
+                    console.log("나왔다.")
+                    console.log("총 돌아간 횟수: "+ j)
+                    break;
+                }
+            }
+        }
+
+
+</script>
+
+<body>
+    <button onclick="start()">돌림돌림 돌림판</button>
+</body>
+
+</html>

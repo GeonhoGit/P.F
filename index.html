@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js" integrity="sha512-894YE6QWD5I59HgZOGReFYm4dnWc1Qt5NtvYSaNcOP+u1T9qYdvdihz0PPSiiqn/+/3e7Jo4EaG7TubfWGUrMQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script> 
+    <meta charset="UTF-8">
+    <script  src="index.js"></script>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>지금까지 만든 것들</title>
+</head>
+<style>
+    body,ul,p{
+    margin: 0px;
+    padding: 0px;
+    font-size: 1vw;
+}
+a{
+    text-decoration-line: none;
+}
+a:visited{
+    color : black;  
+}
+a:link {
+    color : black;
+}
+a:hover{
+    color : red;
+}
+ul{
+    list-style-type : none;
+    display: flex;
+    align-items: center;
+}
+.list1{
+    flex-direction: column; 
+    display:none;
+}
+.memu_list{
+    display: flex;
+    justify-content: space-around;
+}
+.memu_list p{
+    border: 1px black solid;
+}
+.memu_list_target{
+    display: flex;
+    justify-content: space-around;
+}
+.login{
+    display: flex;
+    justify-content: flex-end;
+}
+.login a{
+    padding: 0 12px 0 11px;
+}
+</style>
+<body>
+    <div style="display: flex; flex-direction: column;">
+        <div class="memu_list">
+            <div style="width: 25%;" class="memu_list_1">
+                <p class="memu_list_target" id="but1">게임</p>
+                <ul class="list1">
+                    <li><div class="but">박스피하기</div></li>
+                </ul>
+            </div>
+            <div style="width: 25%;" class="memu_list_1">
+                <p class="memu_list_target" id="but1">문서</p>
+                <ul class="list1">
+                    <li><div class="but">문서(div)</div></li>
+                    <li><div class="but">문서(table)</div></li>
+                    <li><div class="but">문서(table)1</div></li>
+                </ul>
+            </div>
+            <div style="width: 25%;" class="memu_list_1">
+                <p class="memu_list_target" id="but1">친구와 합작</p>
+                <ul class="list1">
+                    <li><div class="but">버튼 3-1</div></li>
+                </ul>
+            </div>
+            <div style="width: 25%;" class="memu_list_1">
+                <p class="memu_list_target" id="but1">빈칸</p>
+                <ul class="list1">
+                    <li><div class="but">버튼 4-1</div></li>
+                </ul>
+            </div>
+            <div style="width: 25%;" class="memu_list_1">
+                <p class="memu_list_target" id="but1">기타</p>
+                <ul class="list1">
+                    <li><div class="but">계산기</div></li>
+                </ul>
+            </div>
+        </div>
+    </div>
+   
+</body>
+
+</html>

@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=2.0, minimum-scale=1.0, user-scalable=no" />
+    <script src="./js.js"></script> 
+    <link rel="stylesheet" href="game_css.css">
+    <title>박스 피하기</title>
+</head>
+
+<body>
+    <canvas id="canvas" style="background-color: rgb(255, 255, 255);"></canvas>
+    <div class="now_list">    
+        <p id="now_dif"></p>
+        <p id="now_time"></p>
+    </div>
+
+    <div class="modal">
+        <div class="modal_body">
+            <p>박스 피하기 version 0.3</p>
+            <p>난이도는 1 ~ 20단계까지 있습니다.</p>
+            <p>시간이 지날수록 더 어려워집니다.</p>
+            <p>플레이하신 난이도는 끝나고 알려드립니다.</p>
+            <p>랭킹은 만들고 있는 중입니다.</p>
+            <p>아래 주의사항을 읽어주세요.</p>
+            <p>1) 화면크기를 FHD으로 플레이하셔야합니다.</p>
+            <p>2) 게임시작 후 마우스를 한번이라도 움직여주세요.</p>
+            <p>3) 마우스가 화면 밖으로 나가면 안됩니다.</p>
+            <p>4) 게임 도중 컨트롤키 누르시면 재시작됩니다.</p>
+            <p>5) 모바일 플레이는 안됩니다.</p>
+            <button onclick="game_start()">게임 플레이</button>
+        </div>
+    </div>
+    <p id="difficulty_1"></p>
+    <div id="modal_1" class="modal_1">  
+        <div class="modal_body_1">
+            <p>랜덤 난이도 박스 피하기 version 0.3</p>
+            <p id="difficulty"></p>
+            <p>축하드립니다!!!</p>
+            <p id="game_time"></p>
+            <p>랭킹은 곧 만들 예정입니다.</p>
+            <input placeholder="이름 작성해주세요.">
+            <button onclick="game_start()">다시 플레이</button>
+        </div>
+    </div>
+</body>
+
+</html>

@@ -1,0 +1,76 @@
+body,
+p,
+h2,h5{
+    font-size: 1vw;
+    margin: 0px;
+}
+h6{
+
+    font-size: 0.7vw;
+    
+}
+p {
+    border: 1px solid black;
+    text-align: center;
+    display: flex;
+    align-items: center;
+    justify-content: center
+}
+
+.신고구분 {
+    width: 30%;
+}
+
+.신고구분1 {
+    display: flex;
+}
+
+.신고구분1 P {
+    text-align: center;
+    width: 20%;
+    padding: 3% 0px;
+}
+
+.제목 {
+    width: 40%;
+    border: 1px solid black;
+    text-align: center;
+}
+
+.제목 h2 {
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.귀속연월 {
+    display: flex;
+    width: 30%;
+}
+
+.귀속연월 div {
+    width: 50%;
+    height: 100%;
+}
+
+.법인명_대표자 {
+    height: 50%;
+    display: flex;
+}
+
+.사업자등록_사업장소재지 {
+    display: flex;
+    height: 50%;
+}
+
+.b2 {
+    display: flex;
+}
+.원천징수{
+    border: 1px solid black;
+    display : flex
+}
+h6{
+    margin: 0px;
+}
