@@ -60,12 +60,15 @@ body{
 }
 
 .draw_number_1{
-    display: flex;
+    display: none;
+    height: 40vw;
+    justify-content: space-evenly;
+    flex-direction: column;
 }
 
 
 .draw_number{
-    display: flex;
+    display: none;
     width: 100%;
     margin-top: 1.65%;
     height: 12.3%;
