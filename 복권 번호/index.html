@@ -12,32 +12,35 @@
     <title>복권 번호</title>
 </head>
 <script>
+
     $(function () {
         var True_false = true
         var drawing_number = []
         $(".every").click(function () {
+            True_false = true
+            $(".draw_number_1").css("display", "none") 
             $(".draw_number").css("display", "flex")
-            for (i = 0; i <= 5; i++) {
-                $(".draw_number" + i).css("display", "none")
-                $(".number" + i).html("0")
-            }
             $(".every").css("color", "red")
             $(".no_every").css("color", "black")
+            for (i = 0; i <= 5; i++) {
+                $(".number" + i).html("0")
+            }
         })
 
         $(".no_every").click(function () {
             True_false = false
             $(".draw_number").css("display", "none")
-            for (i = 0; i <= 5; i++) {
-                $(".draw_number" + i).css("display", "flex")
-                $(".number" + i).html("0")
-            }
+            $(".draw_number_1").css("display", "flex") 
             $(".no_every").css("color", "red")
             $(".every").css("color", "black")
+            for (i = 0; i <= 5; i++) {
+                $(".number" + i).html("0")
+            }
         })
 
         $(".drawing").click(function () {
             if (True_false) {
+                var drawing_number = []
                 for (i = 0; i <= 5; i++) {
                     var num = Math.floor(Math.random() * 10)
                     drawing_number.push(num)
@@ -45,8 +48,8 @@
                 for (i = 0; i <= 5; i++) {
                     $(".number" + i).html(drawing_number[i])
                 }
-            }else{
 
+            }else{
                 for(j=0; j<=5 ;j++){
                     var drawing_number_1 = []
                         for(i=0; i<=5;i++){
@@ -84,8 +87,8 @@
         <p class="number5">6</p>
     </div>
     <!-- 1 ~ 5조 번호  -->
-    <div style="    height: 40vw;display: flex;justify-content: space-evenly;flex-direction: column;">
-        <div id="qwe" class="draw_number0">
+    <div class="draw_number_1" style="height: 40vw;display: flex;justify-content: space-evenly;flex-direction: column;">
+        <div class="draw_number0">
             <p class="head">1 조</p>          
             <p class="number0">1</p>
             <p class="number1">2</p>
