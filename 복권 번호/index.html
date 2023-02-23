@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"
+        integrity="sha512-894YE6QWD5I59HgZOGReFYm4dnWc1Qt5NtvYSaNcOP+u1T9qYdvdihz0PPSiiqn/+/3e7Jo4EaG7TubfWGUrMQ=="
+        crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <link rel="stylesheet" href="./index.css">
+    <title>복권 번호</title>
+</head>
+<script>
+    $(function () {
+        var True_false = true
+        var drawing_number = []
+        $(".every").click(function () {
+            $(".draw_number").css("display", "flex")
+            for (i = 0; i <= 5; i++) {
+                $(".draw_number" + i).css("display", "none")
+                $(".number" + i).html("0")
+            }
+            $(".every").css("color", "red")
+            $(".no_every").css("color", "black")
+        })
+
+        $(".no_every").click(function () {
+            True_false = false
+            $(".draw_number").css("display", "none")
+            for (i = 0; i <= 5; i++) {
+                $(".draw_number" + i).css("display", "flex")
+                $(".number" + i).html("0")
+            }
+            $(".no_every").css("color", "red")
+            $(".every").css("color", "black")
+        })
+
+        $(".drawing").click(function () {
+            if (True_false) {
+                for (i = 0; i <= 5; i++) {
+                    var num = Math.floor(Math.random() * 10)
+                    drawing_number.push(num)
+                }
+                for (i = 0; i <= 5; i++) {
+                    $(".number" + i).html(drawing_number[i])
+                }
+            }else{
+
+                for(j=0; j<=5 ;j++){
+                    var drawing_number_1 = []
+                        for(i=0; i<=5;i++){
+                            var num = Math.floor(Math.random() * 10)
+                            drawing_number_1.push(num)
+                    }
+                        for(i=0; i<=5;i++){
+                            $(".draw_number" + j).find("p.number"+i).html(drawing_number_1[i])
+                            // console.log($(div).siblings(".number" + i))
+                    }
+                }
+            }
+        })
+    })
+</script>
+
+<body>
+    <div class="Nunber1">
+        <div class="every">모든 조 번호 뽑기</div>
+
+        <div class="no_every">1 ~ 5 번호 따로 뽑기</div>
+    </div>
+    <div class="Nunber">
+        <p>오늘의 번호 추천 :&nbsp;</p>
+        <div class="drawing">번호 뽑기</div>
+    </div>
+    <!-- 모든 조 -->
+    <div class="draw_number">
+        <p>모든 조</p>
+        <p class="number0">1</p>
+        <p class="number1">2</p>
+        <p class="number2">3</p>
+        <p class="number3">4</p>
+        <p class="number4">5</p>
+        <p class="number5">6</p>
+    </div>
+    <!-- 1 ~ 5조 번호  -->
+    <div style="    height: 40vw;display: flex;justify-content: space-evenly;flex-direction: column;">
+        <div id="qwe" class="draw_number0">
+            <p class="head">1 조</p>          
+            <p class="number0">1</p>
+            <p class="number1">2</p>
+            <p class="number2">3</p>
+            <p class="number3">4</p>
+            <p class="number4">5</p>
+            <p class="number5">6</p>
+        </div>
+        <div id="qwe" class="draw_number1">
+            <p class="head">2 조</p>            
+            <p class="number0">1</p>
+            <p class="number1">2</p>
+            <p class="number2">3</p>
+            <p class="number3">4</p>
+            <p class="number4">5</p>
+            <p class="number5">6</p>           
+        </div>
+        <div id="qwe" class="draw_number2">
+            <p class="head">3 조</p>
+            <p class="number0">1</p>
+            <p class="number1">2</p>
+            <p class="number2">3</p>
+            <p class="number3">4</p>
+            <p class="number4">5</p>
+            <p class="number5">6</p>          
+        </div>
+        <div id="qwe" class="draw_number3">
+            <p class="head">4 조</p>          
+            <p class="number0">1</p>
+            <p class="number1">2</p>
+            <p class="number2">3</p>
+            <p class="number3">4</p>
+            <p class="number4">5</p>
+            <p class="number5">6</p>         
+        </div>
+        <div id="qwe" class="draw_number4">
+            <p class="head">5 조</p>
+            <p class="number0">1</p>
+            <p class="number1">2</p>
+            <p class="number2">3</p>
+            <p class="number3">4</p>
+            <p class="number4">5</p>
+            <p class="number5">6</p>
+        </div>
+    </div>
+</body>
+
+</html>

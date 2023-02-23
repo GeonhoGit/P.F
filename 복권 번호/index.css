@@ -1,0 +1,133 @@
+body,p{
+    margin: 0px;
+    font-size: 1.5vw;
+}
+.Nunber{
+    width: 100%;
+    display: flex;
+    justify-content: center;
+}
+.Nunber1{
+    width: 100%;
+    display: flex;
+    justify-content: space-evenly;
+}
+.every{
+    display: flex;
+    justify-content: center;
+    width: 50%;
+    border: 1px solid black;
+}
+.no_every{
+    display: flex;
+    justify-content: center;
+    width: 50%;;
+    border: 1px solid black;
+    border-left: 0px;
+}
+
+/* 호버 이벤트  */
+.drawing:hover{
+    cursor:default;
+    color: red;
+}
+.every:hover{
+    cursor:default;
+    color: red;
+}
+.no_every:hover{
+    cursor:default;
+    color: red;
+}
+
+
+
+.draw_number{
+    display: none;
+    width: 100%;
+}
+
+.draw_number0{
+    display: none;
+    width: 100%;
+    height: 15%;
+}
+.draw_number1{
+    display: none;
+    width: 100%;
+    height: 15%;
+}
+.draw_number2{
+    display: none;
+    width: 100%;
+    height: 15%;
+}
+.draw_number3{
+    display: none;
+    width: 100%;
+    height: 15%;
+}
+.draw_number4{
+    display: none;
+    width: 100%;
+    height: 15%;
+}
+
+.head{
+    
+}
+
+.draw_number p{
+    display: flex;
+    justify-content: center;
+    width: 15%;
+    border: 1px solid black;
+    border-right: 0px;
+    align-items: center;
+}
+
+.draw_number0 p{
+    color: red;
+    display: flex;
+    justify-content: center;
+    width: 15%;
+    border: 1px solid black;
+    border-right: 0px;
+    align-items: center;
+}
+.draw_number1 p{
+    color: blue;
+    display: flex;
+    justify-content: center;
+    width: 15%;
+    border: 1px solid black;
+    border-right: 0px;
+    align-items: center;
+}
+.draw_number2 p{
+    color: red;
+    display: flex;
+    justify-content: center;
+    width: 15%;
+    border: 1px solid black;
+    border-right: 0px;
+    align-items: center;
+}
+.draw_number3 p{
+    color: blue;
+    display: flex;
+    justify-content: center;
+    width: 15%;
+    border: 1px solid black;
+    border-right: 0px;
+    align-items: center;
+}
+.draw_number4 p{
+    color: red;
+    display: flex;
+    justify-content: center;
+    width: 15%;
+    border: 1px solid black;
+    border-right: 0px;
+    align-items: center;
+}
