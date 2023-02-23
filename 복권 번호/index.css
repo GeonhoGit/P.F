@@ -2,6 +2,9 @@ body,p{
     margin: 0px;
     font-size: 1.5vw;
 }
+body{
+    height: 100vh;
+}
 .Nunber{
     width: 100%;
     display: flex;
@@ -17,6 +20,11 @@ body,p{
     justify-content: center;
     width: 50%;
     border: 1px solid black;
+    -ms-user-select: none; 
+    -moz-user-select: -moz-none;
+    -khtml-user-select: none;
+    -webkit-user-select: none;
+    user-select: none;
 }
 .no_every{
     display: flex;
@@ -24,8 +32,19 @@ body,p{
     width: 50%;;
     border: 1px solid black;
     border-left: 0px;
+    -ms-user-select: none; 
+    -moz-user-select: -moz-none;
+    -khtml-user-select: none;
+    -webkit-user-select: none;
+    user-select: none;
 }
-
+.drawing{
+    -ms-user-select: none; 
+    -moz-user-select: -moz-none;
+    -khtml-user-select: none;
+    -webkit-user-select: none;
+    user-select: none;
+}
 /* 호버 이벤트  */
 .drawing:hover{
     cursor:default;
@@ -40,41 +59,42 @@ body,p{
     color: red;
 }
 
+.draw_number_1{
+    display: flex;
+}
 
 
 .draw_number{
-    display: none;
+    display: flex;
     width: 100%;
+    margin-top: 1.65%;
+    height: 12.3%;
 }
 
 .draw_number0{
-    display: none;
+    display: flex;
     width: 100%;
     height: 15%;
 }
 .draw_number1{
-    display: none;
+    display: flex;
     width: 100%;
     height: 15%;
 }
 .draw_number2{
-    display: none;
+    display: flex;
     width: 100%;
     height: 15%;
 }
 .draw_number3{
-    display: none;
+    display: flex;
     width: 100%;
     height: 15%;
 }
 .draw_number4{
-    display: none;
+    display: flex;
     width: 100%;
     height: 15%;
-}
-
-.head{
-    
 }
 
 .draw_number p{
@@ -84,6 +104,7 @@ body,p{
     border: 1px solid black;
     border-right: 0px;
     align-items: center;
+    color: blue;
 }
 
 .draw_number0 p{
