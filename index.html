@@ -2,98 +2,214 @@
 <html lang="en">
 
 <head>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js" integrity="sha512-894YE6QWD5I59HgZOGReFYm4dnWc1Qt5NtvYSaNcOP+u1T9qYdvdihz0PPSiiqn/+/3e7Jo4EaG7TubfWGUrMQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script> 
     <meta charset="UTF-8">
-    <script  src="index.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"
+        integrity="sha512-894YE6QWD5I59HgZOGReFYm4dnWc1Qt5NtvYSaNcOP+u1T9qYdvdihz0PPSiiqn/+/3e7Jo4EaG7TubfWGUrMQ=="
+        crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>지금까지 만든 것들</title>
+    <meta name="viewport"
+        content="width=device-width, initial-scale=1.0, maximum-scale=2.0, minimum-scale=1.0, user-scalable=no" />
+    <title>테이블 태그 공부하기</title>
 </head>
-<style>
-    body,ul,p{
-    margin: 0px;
-    padding: 0px;
-    font-size: 1vw;
-}
-a{
-    text-decoration-line: none;
-}
-a:visited{
-    color : black;  
-}
-a:link {
-    color : black;
-}
-a:hover{
-    color : red;
-}
-ul{
-    list-style-type : none;
-    display: flex;
-    align-items: center;
-}
-.list1{
-    flex-direction: column; 
-    display:none;
-}
-.memu_list{
-    display: flex;
-    justify-content: space-around;
-}
-.memu_list p{
-    border: 1px black solid;
-}
-.memu_list_target{
-    display: flex;
-    justify-content: space-around;
-}
-.login{
-    display: flex;
-    justify-content: flex-end;
-}
-.login a{
-    padding: 0 12px 0 11px;
-}
-</style>
+<!-- <script>
+    let number_1 = 1;
+    let number_1_1 = 2;
+    let number_2 = 2;
+    let number_3 = 2;
+    function tr() {
+        let tagArea = document.getElementById("table")
+        let new_pTag = document.createElement('tr');
+        new_pTag.setAttribute('id', number_1_1);
+        new_pTag.innerHTML = "섹션" + number_1;
+
+        tagArea.appendChild(new_pTag);;
+        number_1++
+        number_1_1++
+    }
+    function td() {
+        let tagArea = document.getElementById("tr1")
+        let new_pTag = document.createElement('td');
+
+        new_pTag.innerHTML = "집" + number_2;
+
+        tagArea.appendChild(new_pTag);;
+        number_2++
+    }
+    function thead() {
+        let tagArea = document.getElementById("thead")
+        let new_pTag = document.createElement('td');
+
+        new_pTag.innerHTML = "공부하기" + number_3;
+
+        tagArea.appendChild(new_pTag);;
+        number_3++
+    }
+</script> -->
+
 <body>
-    <div style="display: flex; flex-direction: column;">
-        <div class="memu_list">
-            <div style="width: 25%;" class="memu_list_1">
-                <p class="memu_list_target" id="but1">게임</p>
-                <ul class="list1">
-                    <li><div class="but">박스피하기</div></li>
-                </ul>
-            </div>
-            <div style="width: 25%;" class="memu_list_1">
-                <p class="memu_list_target" id="but1">문서</p>
-                <ul class="list1">
-                    <li><div class="but">문서(div)</div></li>
-                    <li><div class="but">문서(table)</div></li>
-                    <li><div class="but">문서(table)1</div></li>
-                </ul>
-            </div>
-            <div style="width: 25%;" class="memu_list_1">
-                <p class="memu_list_target" id="but1">친구와 합작</p>
-                <ul class="list1">
-                    <li><div class="but">버튼 3-1</div></li>
-                </ul>
-            </div>
-            <div style="width: 25%;" class="memu_list_1">
-                <p class="memu_list_target" id="but1">빈칸</p>
-                <ul class="list1">
-                    <li><div class="but">버튼 4-1</div></li>
-                </ul>
-            </div>
-            <div style="width: 25%;" class="memu_list_1">
-                <p class="memu_list_target" id="but1">기타</p>
-                <ul class="list1">
-                    <li><div class="but">계산기</div></li>
-                    <li><div class="but">복권 번호</div></li>
-                </ul>
-            </div>
-        </div>
+    <!-- <button onclick="tr()">세로 늘리기(tr)</button>
+    <button onclick="td()">가로 늘리기(td)</button>
+    <button onclick="thead()">제목 늘리기(thead)</button>
+
+    <table id="table">
+        <thead>
+            <tr id="thead">
+                <td>
+                    공부하기
+                </td>
+            </tr>
+        </thead>
+        <tr id="tr1">
+            <td>집</td>
+        </tr>
+    </table> -->
+    <div class="tb_but">
+        <table id="table" style="margin-top: 0%;" class="table">
+            <thead>
+                <tr>
+                    <th>번호</th>
+                    <th>수입</th>
+                    <th>지출</th>
+                </tr>
+            </thead>
+            <tr>
+                <td>입력창</td>
+                <td><input type="number" id="income"></td>
+                <td><input type="number" id="expenditure"></td>
+            </tr>
+        </table>
+        <button class="add" disabled="disabled" id="add">추가</button>
+        <button class="calculate" id="calculate" disabled="disabled">계산하기</button>
+        <button class="clear" id="clear">초기화</button>
     </div>
-   
+
+
 </body>
+<script>
+    var tb_num = 1;
+    let every_income = 0;
+    let every_expenditure = 0;
+    var income_1 = []
+    var expenditure_1 = []
+    $("#add").attr("disabled", false)
+    //추가하기
+    $("#add").on("click", function () { //추가 버튼 클릭시
+        var input_income = $("#income").val() //수입 인풋칸 변수
+        var input_expenditure = $("#expenditure").val() //지출 인풋칸 변수
+
+        if (input_income.length) { //수입칸이 비어져있는지 확인
+            if (input_expenditure.length) { //지출칸이 비어져있는지 확인
+                income_1.push(input_income) //다 칸이 채워져 있을시 수입 계산을 위해 배열에 값 추가 
+                expenditure_1.push(input_expenditure) //다 칸이 채워져 있을시 지출 계산을 위해 배열에 값 추가 
+                $("#table").append("<tr class = 'tb_tb'><td>" + tb_num + "</td><td>" + input_income + "</td><td>" + input_expenditure + "</td></tr>"); // 태그 추가
+                tb_num++ //번호 값 추가
+                $("#calculate").attr("disabled", false)
+            } else { alert("지출을 입력해 주시기 바랍니다.") }
+        } else { alert("수입을 입력해 주시기 바랍니다.") }
+    })
+
+    //계산하기
+    $("#calculate").on
+        ("click", function () { //계산하기 버튼 클릭시 
+            var minus_plus = []
+            for (i = 0; i < income_1.length; i++) { //수입배열값 갯수만큼 돌리기(지출이랑 갯수 똑같음)
+                var every_income_1 = ((parseInt(income_1[i]))) // 수입배열에 있던 값
+                every_income = every_income_1 += every_income // 배열에 있던 값 다 더하기
+                var expenditure = (parseInt(expenditure_1[i])) // 지출배열에 있던 값
+                every_expenditure = every_expenditure += expenditure // 지출에 있던 값 다 더하기
+            }
+            minus_plus = every_income - every_expenditure
+            $("#table").append("<tr class = 'tb_tb'><td style='background : skyblue' ></td><td>" + every_income + "</td><td>" + every_expenditure + "</td></tr>"); // 태그 추가
+            $("#table").append("<tr class = 'tb_tb'><td colspan='2' style='background : skyblue' >남은 돈</td><td>" + minus_plus + "</td></tr>"); // 태그 추가
+            every_income -= every_income; // 그 다음 값 초기화
+            every_expenditure -= every_expenditure; // 그 다음 값 초기화(안하면 값 중첩)
+            income_1.length = 0;
+            expenditure_1.length = 0;
+            $("#calculate").attr("disabled", true)
+            $("#add").attr("disabled", true)
+
+        })
+    //초기화
+    $("#clear").on("click", function () {
+        // 추가 버튼 및 계산하기 버튼 클릭시 생성되는 것들에게 class = "tb_tb"을 주고 그걸로 삭제
+        $(".tb_tb").remove()
+        $("#add").attr("disabled", false)
+        every_income -= every_income; // 그 다음 값 초기화
+        every_expenditure -= every_expenditure; // 그 다음 값 초기화(안하면 값 중첩)
+        income_1.length = 0;
+        expenditure_1.length = 0;
+        tb_num = 1
+        $("#name").val("")
+        $("#income").val("")
+        $("#expenditure").val("")
+    })
+    //지출 인풋에서 엔터키 누르면 자동으로 추가
+    $("#expenditure").on("keyup", function (key) {
+        if (key.keyCode == 13) {
+            var input_income = $("#income").val() //수입 인풋칸 변수
+            var input_expenditure = $("#expenditure").val() //지출 인풋칸 변수
+            if (input_income.length) { //수입칸이 비어져있는지 확인
+                if (input_expenditure.length) { //지출칸이 비어져있는지 확인
+                    income_1.push(input_income) //다 칸이 채워져 있을시 수입 계산을 위해 배열에 값 추가 
+                    expenditure_1.push(input_expenditure) //다 칸이 채워져 있을시 지출 계산을 위해 배열에 값 추가 
+                    $("#table").append("<tr class = 'tb_tb'><td>" + tb_num + "</td><td>" + input_income + "</td><td>" + input_expenditure + "</td></tr>"); // 태그 추가
+                    tb_num++ //번호 값 추가
+                    $("#calculate").attr("disabled", false)
+                } else { alert("지출을 입력해 주시기 바랍니다.") }
+            } else { alert("수입을 입력해 주시기 바랍니다.") }
+        }
+    });
+</script>
+<style>
+    input {
+        border: 0px;
+        padding: 0px;
+        width: 100%;
+        height: 100%;
+    }
+
+    button {
+        background: white;
+        border: grey 1px solid;
+    }
+
+    button:hover {
+        background: gray;
+    }
+
+    body {
+        width: 100%;
+        height: 100vh;
+        padding: 0;
+        margin: 0;
+        overflow-y: hidden;
+    }
+
+    table {
+        border-collapse: collapse;
+    }
+
+    .tb_but {
+        display: flex;
+    }
+
+    /*이중선 제거*/
+    th,
+    td,
+    tr {
+        width: 100px;
+        height: 50px;
+        text-align: center;
+        border: 1px solid #000;
+
+        vertical-align: top;
+        /* 위 */
+        vertical-align: bottom;
+        /* 아래 */
+        vertical-align: middle;
+        /* 가운데 */
+    }
+</style>
 
 </html>
