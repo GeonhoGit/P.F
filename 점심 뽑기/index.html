@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"
+    integrity="sha512-894YE6QWD5I59HgZOGReFYm4dnWc1Qt5NtvYSaNcOP+u1T9qYdvdihz0PPSiiqn/+/3e7Jo4EaG7TubfWGUrMQ=="
+    crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <title>Document</title>
+</head>
+<style>
+    body{
+        margin: 0px;
+        width: 100%;
+        height: 100vh;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+    button{
+        background: white;
+        border: 1px solid black;
+        }
+    .div{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+</style>
+<body>
+    <div class="div">
+        <button class="a">점심뽑기</button>
+        <h1 class="b"></h1>
+    </div>
+</body>
+
+<script>
+    $(function (){    
+    lunch = [
+    "칼국수",
+    "돈까스",
+    "제육볶음",
+    "국밥",
+    "덮밥",
+    "햄버거",
+    "짜장면",
+    "초밥",
+    "쭈꾸미",
+    "쌀국수",
+    "부대찌개",
+    "분식집"
+    ]
+    console.log(lunch)
+        $(".a").click(function (){
+            rand = Math.floor(Math.random() * lunch.length)
+            $(".b").text("오늘 먹을 점심은 "+lunch[rand])
+        })
+    })
+</script>
+</html>
