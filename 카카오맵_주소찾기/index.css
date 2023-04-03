@@ -1,0 +1,31 @@
+body,button {
+    margin: 0px;
+    padding: 0px;
+}
+.board{
+    position: absolute;
+    z-index: 2;
+    width: 30%;
+    height: 10vh;
+    background : #FFFFFF;
+    border-radius : 0px 0px 50px 0px;
+    box-shadow: 1px 1px 5px 1px gray;
+    display: flex;
+    min-width : 250px;
+    min-height: 50px;
+}
+.address_name{
+    width: 80%;
+    text-align: center;
+    line-height: 100px;
+    
+}
+.address{
+    width: 23%;
+    border-radius : 0px 0px 50px 0px;
+    border: 0px;
+}
+.address:hover{
+    background: #c9c8c8;
+}
+ 

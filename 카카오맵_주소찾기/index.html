@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="//t1.daumcdn.net/mapjsapi/bundle/postcode/prod/postcode.v2.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"
+        integrity="sha512-894YE6QWD5I59HgZOGReFYm4dnWc1Qt5NtvYSaNcOP+u1T9qYdvdihz0PPSiiqn/+/3e7Jo4EaG7TubfWGUrMQ=="
+        crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <script type="text/javascript"
+        src="//dapi.kakao.com/v2/maps/sdk.js?appkey=96c93da4c38611faf89536c2a9138cb6&libraries=services,clusterer"></script>
+    <link rel="stylesheet" href="./index.css">
+    <title>카카오맵 API</title>
+</head>
+<style>
+
+</style>
+
+<body>
+    <div id="map" style="width:100%;height:100vh;">
+        <div class="board">
+            <span class="address_name"></span>
+            <button class="address">주소찾기</button>
+        </div>
+    </div>
+
+</body>
+
+<script>
+
+    $(function () {
+        //카카오맵 
+        var container = document.getElementById('map');
+
+        //마커를 미리 생성
+        var marker = new daum.maps.Marker({
+            position: new daum.maps.LatLng(37.48248507908906, 126.87745928237109),
+            map: map
+        });
+
+
+        var options = {
+            center: new kakao.maps.LatLng(37.48248507908906, 126.87745928237109),
+            level: 3
+        };
+        var map = new kakao.maps.Map(container, options);
+        //주소를 좌표로 변환 
+        var geocoder = new daum.maps.services.Geocoder();
+        marker.setMap(map)
+
+        var content = '<div class="bAddr">' +
+            '<span class="title">주소 <br></span>' +
+            '<span class="title1">서울특별시 금천구 가산동 459-22 </span>' +
+            '</div>';
+        //인포윈도우
+        infowindow = new kakao.maps.InfoWindow({ zindex: 1 });
+        infowindow.setContent(content);
+        infowindow.open(map, marker);
+
+        //카카오 주소 찾기 
+        $(".address").click(function () {
+
+            new daum.Postcode({
+                oncomplete: function (data) {
+                    // 주소로 상세 정보를 검색
+                    geocoder.addressSearch(data.address, function (results, status) {
+                        // 정상적으로 검색이 완료됐으면
+                        if (status === daum.maps.services.Status.OK) {
+                            var result = results[0]; //첫번째 결과의 값을 활용
+                           // var road_name = (results[0].road_name.building_name != undefined) ? results[0].road_name.building_name : null ;
+                            console.log(results[0].road_name)
+                            var content = '<div class="bAddr">' +
+                                '<span class="title">주소 <br></span>' +
+                                result.address_name
+                            '</div>';
+                            infowindow.close();
+                            // 해당 주소에 대한 좌표를 받아서
+                            var coords = new daum.maps.LatLng(result.y, result.x);
+                            map.relayout();
+                            // 지도 중심을 변경한다.
+                            map.setCenter(coords);
+                            // 마커를 결과값으로 받은 위치로 옮긴다.
+                            marker.setPosition(coords)
+                            //인포윈도우
+                            infowindow = new kakao.maps.InfoWindow({ zindex: 1 });
+                            infowindow.setContent(content);
+                            infowindow.open(map, marker);
+                            //자신이 찾고 있는 주소를 주소찾기 옆에 띄어줌
+                            $(".address_name").text(result.address_name); 
+                        }
+                    });
+
+                }
+            }).open();
+
+        })
+
+    })
+</script>
+
+</html>
