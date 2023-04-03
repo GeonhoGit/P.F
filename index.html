@@ -4,6 +4,7 @@
 <head>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js" integrity="sha512-894YE6QWD5I59HgZOGReFYm4dnWc1Qt5NtvYSaNcOP+u1T9qYdvdihz0PPSiiqn/+/3e7Jo4EaG7TubfWGUrMQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script> 
     <meta charset="UTF-8">
+    <script type="text/javascript" src="//dapi.kakao.com/v2/maps/sdk.js?appkey=	96c93da4c38611faf89536c2a9138cb6"></script>
     <script  src="index.js"></script>
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -13,7 +14,7 @@
     body,ul,p{
     margin: 0px;
     padding: 0px;
-    font-size: 1vw;
+    font-size: 22px;
 }
 a{
     text-decoration-line: none;
@@ -56,19 +57,17 @@ ul{
 }
 </style>
 <body>
-    <div style="display: flex; flex-direction: column;">
+    <div style="display: flex; flex-direction: column; min-width: 1250px;">
         <div class="memu_list">
             <div style="width: 25%;" class="memu_list_1">
                 <p class="memu_list_target" id="but1">게임</p>
                 <ul class="list1">
                     <li><div class="but">박스피하기</div></li>
-                    <li><div class="but">연습게임</div></li>
                 </ul>
             </div>
             <div style="width: 25%;" class="memu_list_1">
                 <p class="memu_list_target" id="but1">문서</p>
                 <ul class="list1">
-                    <li><div class="but">문서(div)</div></li>
                     <li><div class="but">문서(table)</div></li>
                     <li><div class="but">문서(table)1</div></li>
                 </ul>
@@ -76,7 +75,6 @@ ul{
             <div style="width: 25%;" class="memu_list_1">
                 <p class="memu_list_target" id="but1">친구와 합작</p>
                 <ul class="list1">
-                    <li><div class="but">버튼 3-1</div></li>
                 </ul>
             </div>
             <div style="width: 25%;" class="memu_list_1">
@@ -86,10 +84,17 @@ ul{
                 </ul>
             </div>
             <div style="width: 25%;" class="memu_list_1">
+                <p class="memu_list_target" id="but1">API 이용해서 만든것</p>
+                <ul class="list1">
+                    <li><div class="but">카카오맵_주소찾기</div></li>
+                </ul>
+            </div>
+            <div style="width: 25%;" class="memu_list_1">
                 <p class="memu_list_target" id="but1">기타</p>
                 <ul class="list1">
                     <li><div class="but">계산기</div></li>
                     <li><div class="but">복권 번호</div></li>
+                    <li><div class="but">점심 뽑기</div></li>
                 </ul>
             </div>
         </div>
